@@ -35,14 +35,5 @@ void setup()
 
 void loop()
 {
-  MyMotor.setHallBLDCmotorRPMspeed(DIRECTION, rpmSpeed, WEAKENING);
-
-  if (Serial.available() > 0)
-  {
-    uint8_t in = Serial.read();
-    if(in == '+') rpmSpeed += 200;          // Adapt the speed with keyboard input in the serial monitor
-    if(in == '-') rpmSpeed -= 200;
-    Serial.println(rpmSpeed);
-  }
-  
+  MyMotor.setHallBLDCmotorRPMspeed(DIRECTION, rpmSpeed, WEAKENING);  //Start the BLDC Motor with the desired speed and keep sending data in a loop 
 }
